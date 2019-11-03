@@ -1,2 +1,10 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h1>Editing Book</h1>
+<%= form_for(@book) do |f| %>
+<%= render 'layouts/error_messages', model: f.object %>
+<%= f.label :title, "Title" %><br>
+<%= f.text_field :title %><br>
+<%= f.label :body, "Body" %><br>
+<%= f.text_area :body %><br>
+<%= f.submit 'Update Book' %>
+<% end %>
+<%= link_to "Show", "/books/#{@book.id}" %>|<%= link_to "Back", "/books" %>
